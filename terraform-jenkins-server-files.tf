@@ -1,19 +1,19 @@
 provider aws {
     region = "us-east-1"
 }
-resource "aws_instance" "jenkins-server" {
+resource "aws_instance" "healthcare-server" {
   ami           = "ami-007855ac798b5175e" 
   instance_type = "t2.medium"
-  key_name = "DEMOKEY"
-  vpc_security_group_ids= ["sg-0c7aae9017fc5106b"]
+  key_name = "ubuntu-keypair.pem"
+  vpc_security_group_ids= ["sg-09ab4eda7c57a0d8b"]
 
    tags = {
-    Name = "Jenkins-server"
+    Name = "healthcare-server"
   }
 }
 
-output "Jenkins-server_public_ip" {
+output "healthcare-server_public_ip" {
 
-  value = aws_instance.jenkins-server.public_ip
+  value = aws_instance.healthcare-server.public_ip
   
 }

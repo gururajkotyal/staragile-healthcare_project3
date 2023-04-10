@@ -16,7 +16,7 @@ spec:
     spec:
        containers:
          - name: medicure
-           image: revanthkumar9/medicure:latest
+           image: gururajdockerusername/healthcare:1.0
            ports:
              - containerPort: 8082
                name: http-web-app-01
